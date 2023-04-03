@@ -1,0 +1,72 @@
+1****Voici une liste de champs qui pourraient être nécessaires dans un formulaire d'inscription pour un réceptionniste d'hôpital sur un site internet :
+
+1-Nom complet
+2-Adresse e-mail
+3-Numéro de téléphone
+4-Adresse postale
+5-Date de naissance
+6-Lieu de naissance
+7-Nationalité
+8-Sexe
+9-État matrimonial
+10-Niveau d'éducation
+11-Langues parlées
+12-Expérience professionnelle pertinente
+13-Références professionnelles
+14-Certificats ou diplômes pertinents
+15-Compétences en informatique
+16-Motivation pour le poste
+17-Disponibilité
+18-Autres compétences ou intérêts pertinents
+Il est important de noter que la liste des champs dépendra de la politique de recrutement de l'hôpital et de la réglementation en vigueur. Certains champs peuvent être facultatifs, tandis que d'autres peuvent être obligatoires en fonction de la situation. Il est donc recommandé de consulter les exigences de l'hôpital et de se conformer aux réglementations applicables avant de créer un formulaire d'inscription.
+
+
+2******Voici une liste de champs qui pourraient être nécessaires dans un formulaire d'inscription pour un médecin d'hôpital sur un site internet :
+
+Nom complet
+Adresse e-mail
+Numéro de téléphone
+Adresse postale
+Date de naissance
+Lieu de naissance
+Nationalité
+Sexe
+État matrimonial
+Niveau d'éducation
+Langues parlées
+Spécialité médicale
+Numéro d'enregistrement médical
+Expérience professionnelle pertinente
+Références professionnelles
+Certificats ou diplômes pertinents
+Compétences en informatique
+Motivation pour le poste
+Disponibilité
+Autres compétences ou intérêts pertinents
+
+
+
+
+3******Voici une liste de champs courants qu'on peut trouver dans le dossier d'un patient inscrit dans un hôpital :
+
+Nom complet du patient
+Date de naissance
+Sexe
+Adresse complète
+Numéro de téléphone
+Numéro d'identification (par exemple, numéro d'assurance maladie)
+Renseignements sur le médecin traitant
+Motif de l'hospitalisation ou raison de la visite
+Histoire médicale du patient
+Antécédents chirurgicaux ou traitements antérieurs
+Informations sur les allergies connues
+Médicaments en cours et dosage
+Résultats de tests de laboratoire récents ou d'imagerie médicale
+Plan de traitement recommandé par le médecin
+Informations sur le statut de l'assurance maladie et la facturation
+
+
+Il est important de noter que la liste de champs peut varier en fonction de la politique de chaque hôpital, du pays où l'hôpital est situé et des lois en vigueur.
+
+
+

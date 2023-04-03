@@ -1,0 +1,38 @@
+.flex-container {
+    display: flex; /* Set display property to flex */
+    flex-wrap: wrap; /* Allow elements to wrap to next row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+  }
+  
+  .flex-item {
+    flex: 1 1 300px; /* Set the flex property to control the width of the items */
+    margin: 0 20px; /* Add some margin between the items */
+    border-radius: 20%;
+
+  }
+  .flex-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+ 
+  .flex-item:hover{
+    transform: scale(105%);
+   
+  }
+  /* Make section inline in media */
+  @media screen and (max-width: 768px) { /* Add a media query for screens smaller than 768px */
+    .section {
+      display: inline-block; /* Set the display property to inline-block */
+      height: auto; /* Set the height to auto to allow the content to determine the height */
+    }
+  }
+  @media screen and (min-width: 780px) { /* Add a media query for screens smaller than 768px */
+    .favss{
+        transform: translateY(50%);
+    }
+  }

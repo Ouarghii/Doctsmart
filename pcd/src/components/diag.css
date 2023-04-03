@@ -1,0 +1,75 @@
+.diagicon{
+   margin-left: 80px;
+   transform: translateY(20%);
+}
+.diag1{
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+.diag2 {
+    margin-left: 230px;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+
+}
+.diag3{
+    margin-left: 230px;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+
+}
+.diag1:hover{
+    background-color: black;
+    color: azure;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 10px;
+}
+.diag2:hover{
+    background-color: black;
+    color: azure;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 10px;
+}
+.diag3:hover{
+    background-color: black;
+    color: azure;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 10px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+@media only screen and (max-width: 1208px) {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .diag1 ,.diag2 , .diag3{
+        margin-left: 100px;
+        justify-content: center;
+    }
+    .diag1, .diag2, .diag3 {
+      flex-basis: 100%;
+    }
+    .diag1, .diag2 {
+      width: 50%;
+      padding-right: 10px;
+    }
+    .diag3 {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }

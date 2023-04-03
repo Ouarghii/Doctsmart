@@ -1,0 +1,30 @@
+.icon1 {
+    
+    transform: translateX(80%);
+}
+.icon2 {
+    transform: translateX(-80%);
+}
+.icon1:hover{
+   color: azure;
+   size: 55px;
+   background-color: rgb(231, 232, 224);
+   border-radius: 100%;
+}
+.icon2:hover{
+    color: azure;
+    size: 55px;
+    background-color: rgb(231, 232, 224);
+    border-radius: 100%;
+ }
+ .slow-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .slow-reveal.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
