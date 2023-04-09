@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');/*font-family: 'Parisienne', cursive;*/
+
+* {
+  font-family: 'Oswald';
+}
+
+.blogs {  /*services sections style*/
+width: 100%;
+height: 90vh;
+background: #ffffff;
+padding: 0 0;
+
+margin-bottom: -8%;
+}
+.blogs h1 {  /*the title style our services */
+text-align: center;
+padding-top: -1%;
+margin-bottom: 45px;
+font-weight: 600;
+font-size: 35px;
+font-family: 'Parisienne', cursive;
+position: relative;
+}
+.blogs h1::after {   /* Our section title underline */
+content:'';
+background: #2ea3dd;
+width: 120px;
+height: 5px;
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+}
+.row1 {
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(485px,1fr));  /* bech nadhmou bihom kol star 9adech fih men services*/
+grid-gap: 30px;
+margin-left: 6%;
+align-items: center;
+}
+.servicesbl {
+height: 370px;
+width:490px;
+text-align: center;
+padding: 35px 10px;
+margin-left: 50px;
+margin-right: 50px;
+margin-bottom: 250px;
+font-size: 14px;
+cursor: pointer;
+background: transparent;
+transition: transform 0.4s, background 0.35s;
+
+}
+
+.servicesbl .icons {
+font-size: 40px;
+margin-bottom: 5px;
+color: #2ea3dd;
+}
+.servicesbl h2 {
+font-weight: 600;
+margin-bottom: 9px;
+font-size: 25px;
+
+}
+.servicesbl .blogimage {
+  position: relative;
+  width: 490px;
+  height: 350px;
+  left: -2.75%;
+  top: -15%;
+  margin-bottom: 25px;
+  }
+
+.servicesbl .btnfixé {
+  position: relative;
+  left: -3%;
+  top: -140%;
+  width: 70px;
+  height: 125px;
+  background-color: #2ea3dd;
+  margin-bottom: -40%;
+  color: #fff;
+}
+.servicesbl .btnfixé h2 {
+  margin-bottom: -10px;
+  
+  color: #fff;
+}
+.servicesbl .btnfixé p {
+  margin-bottom: -20px;
+  color: #fff;
+}
+.servicesbl:hover .icons {
+  color: #fff;
+}
+ .btn111 {
+  font-size: 20px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 22px;
+  background-color: #2ea3dd;
+  align-items: center;
+  /* margin-left: 50%; */
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+  }
+  .btn111:hover {
+    color: #2ea3dd;
+    background-color: transparent;
+    border: 1px solid #2ea3dd;
+    }
+.numbers {
+  position: relative;
+  font-family:'Oswald';
+  font-size: 50px;
+  padding-bottom: -40px;
+}
+.servicesbl p {
+  text-align: center;
+  padding:20px 0 ;
+}

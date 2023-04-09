@@ -10,6 +10,8 @@ import Header from './auth/Header';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
 import './home.css';
+import Reviewexp from './Review';
+import Contactus from './contactus';
 
 const Home = () => {
   useEffect(() => {
@@ -37,7 +39,10 @@ const Home = () => {
         <Cards className="slow-reveal" />
         <Fav className="slow-reveal" />
         <Helps className="slow-reveal" />
-        <Footer className="slow-reveal" />
+        <Reviewexp />
+        {/* <Contactus /> */}
+       {/*<Footer className="slow-reveal" />*/} 
+        
       </div>
     </div>
   );

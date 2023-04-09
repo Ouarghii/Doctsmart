@@ -2,6 +2,7 @@ import React from 'react'
 import './diag.css'
 import {BsHeartPulseFill} from'react-icons/bs'
 import {FaLaptopMedical} from 'react-icons/fa'
+import Footer from './Footer'
 const Diag = () => {
   return (
     <div>

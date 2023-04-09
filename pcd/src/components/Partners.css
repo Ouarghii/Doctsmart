@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');/*font-family: 'Parisienne', cursive;*/
+
+.partners {
+   position: relative;
+   width: 100%;
+   height: 40vh;
+   margin-top: 10%; 
+}
+
+.partners h2 {  /*the title style our services */
+    text-align: center;
+    padding-top: -1%;
+    margin-bottom: 45px;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: 'Parisienne', cursive;
+    position: relative;
+  }
+  .partners h2::after {   /* Our section title underline */
+    content:'';
+    background: #2ea3dd;
+    width: 120px;
+    height: 5px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+.partner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .partner-logo {
+    width: 250px;
+    height: 180px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .partner-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @media only screen and (max-width: 768px) {
+    .partners {
+      margin-top: 250px;
+    }
+    .partners h2 {
+      font-size: 28px;
+    }
+    
+    .partner-logo {
+      width: 120px;
+      height: 80px;
+      margin: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .partners h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    
+    .partner-logo {
+      width: 80px;
+      height: 60px;
+      margin: 5px;
+    }
+  }

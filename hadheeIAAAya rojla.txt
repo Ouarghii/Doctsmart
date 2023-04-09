@@ -1,0 +1,132 @@
+from flask import Flask, request, jsonify
+
+# Predicts diseases based on the symptoms entered and selected by the user.
+# importing all necessary libraries
+import warnings
+import numpy as np
+import pandas as pd
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from sklearn.model_selection import train_test_split, cross_val_score
+from statistics import mean
+from nltk.corpus import wordnet 
+import requests
+from bs4 import BeautifulSoup
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import RegexpTokenizer
+from itertools import combinations
+from time import time
+from collections import Counter
+import operator
+from xgboost import XGBClassifier
+import math
+from Treatment import diseaseDetail
+from sklearn.linear_model import LogisticRegression
+
+warnings.simplefilter("ignore")
+
+import nltk
+nltk.download('all')
+
+# returns the list of synonyms of the input word from thesaurus.com (https://www.thesaurus.com/) and wordnet (https://www.nltk.org/howto/wordnet.html)
+def synonyms(term):
+    synonyms = []
+    response = requests.get('https://www.thesaurus.com/browse/{}'.format(term))
+    soup = BeautifulSoup(response.content,  "html.parser")
+    try:
+        container=soup.find('section', {'class': 'MainContentContainer'}) 
+        row=container.find('div',{'class':'css-191l5o0-ClassicContentCard'})
+        row = row.find_all('li')
+        for x in row:
+            synonyms.append(x.get_text())
+    except:
+        None
+    for syn in wordnet.synsets(term):
+        synonyms+=syn.lemma_names()
+    return set(synonyms)
+
+# utlities for pre-processing
+stop_words = stopwords.words('english')
+lemmatizer = WordNetLemmatizer()
+splitter = RegexpTokenizer(r'\w+')
+
+# Load Dataset scraped from NHP (https://www.nhp.gov.in/disease-a-z) & Wikipedia
+# Scrapping and creation of dataset csv is done in a separate program
+df_comb = pd.read_csv("/content/drive/My Drive/Python Project data/IR_Project/dis_sym_dataset_comb.csv") # Disease combination
+df_norm = pd.read_csv("/content/drive/My Drive/Python Project data/IR_Project/dis_sym_dataset_norm.csv") # Individual Disease
+
+X = df_comb.iloc[:, 1:]
+Y = df_comb.iloc[:, 0:1]
+
+lr = LogisticRegression()
+lr = lr.fit(X, Y)
+scores = cross_val_score(lr, X, Y, cv=5)
+
+X = df_norm.iloc[:, 1:]
+Y = df_norm.iloc[:, 0:1]
+
+# List of symptoms
+dataset_symptoms = list(X.columns)
+
+app = Flask(__name__)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Taking symptoms from user as input 
+    user_symptoms = request.form['symptoms'].lower().split(',')
+    # Preprocessing the input symptoms
+    user_symptoms = [lemmatizer.lemmatize(word) for word in user_symptoms if not word in stop_words]
+    user_symptoms = [word for word in user_symptoms if len(word)>2]
+    user_symptoms_new = []
+    for symptom in user_symptoms:
+        syns = list(synonyms(symptom))
+        if len(syns)>0:
+            user_symptoms_new+=syns
+        else:
+            user_symptoms_new.append(symptom)
+    user_symptoms_new = list(set(user_symptoms_new))
+    user_symptoms_new = [word for word in user_symptoms_new if word in dataset_symptoms]
+ # Creating an empty dictionary to store the count of each disease
+    disease_count = {}
+    
+    # Predicting for diseases with only one symptom match
+    for symptom in user_symptoms_new:
+        for index, row in df_norm.iterrows():
+            if row[symptom]==1:
+                if row['Disease'] in disease_count:
+                    disease_count[row['Disease']] += 1
+                else:
+                    disease_count[row['Disease']] = 1
+    
+    # Predicting for diseases with combination of symptoms
+    for L in range(1, len(user_symptoms_new)+1):
+        for subset in combinations(user_symptoms_new, L):
+            for index, row in df_comb.iterrows():
+                flag = 0
+                for sym in subset:
+                    if row[sym]==0:
+                        flag=1
+                        break
+                if flag==0:
+                    if row['Disease'] in disease_count:
+                        disease_count[row['Disease']] += 1
+                    else:
+                        disease_count[row['Disease']] = 1
+
+    # Sorting the dictionary of diseases by count of matching symptoms in decreasing order
+    sorted_diseases = sorted(disease_count.items(), key=operator.itemgetter(1), reverse=True)
+
+    # If no diseases found with given symptoms
+    if len(sorted_diseases)==0:
+        result = "No diseases found with given symptoms. Please check the spelling or try with different symptoms."
+    else:
+        # Prediction of top 5 matching diseases
+        top_5_diseases = sorted_diseases[:5]
+        result = "Top 5 predicted diseases based on given symptoms are: \n"
+        for i in range(len(top_5_diseases)):
+            result += "{}. {} \n".format(i+1, top_5_diseases[i][0])
+    
+    return jsonify({"result": result})
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -25,14 +25,22 @@
    
   }
   /* Make section inline in media */
-  @media screen and (max-width: 768px) { /* Add a media query for screens smaller than 768px */
+  @media screen and (max-width: 1468px) { /* Add a media query for screens smaller than 768px */
     .section {
       display: inline-block; /* Set the display property to inline-block */
       height: auto; /* Set the height to auto to allow the content to determine the height */
+    }
+    .bttun{
+      font-size: 15px;
+      width: 150px;
     }
   }
   @media screen and (min-width: 780px) { /* Add a media query for screens smaller than 768px */
     .favss{
         transform: translateY(50%);
     }
+  }
+  .blaka {
+    transform: translateY(130%);
+    width: 150%;
   }

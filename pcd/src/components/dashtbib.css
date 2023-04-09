@@ -1,0 +1,233 @@
+/* RESET */
+
+  
+  /* UTILITY CLASSES */
+  .containernn {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .brandd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .brandd .iconnn {
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .brandd .text {
+    display: none;
+  }
+  
+  .side-menuuu {
+    list-style: none;
+    padding: 1rem 0;
+  }
+  
+  .side-menuuu .top {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .side-menuuu li {
+    margin-bottom: 0.5rem;
+    
+  }
+  
+  .side-menuuu a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .side-menuuu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .side-menuuu .activeee {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .side-menuuu .iconnn {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* .side-menuuu .text {
+    display: none;
+   
+  } */
+  
+  .side-menuuu .logout {
+    margin-top: 2rem;
+    color: #ff4d4f;
+  }
+  
+  .side-menuuu .logout .icon {
+    color: inherit;
+  }
+  
+  .side-menuuu .logout:hover {
+    background-color: rgba(255, 77, 79, 0.1);
+  }
+  #sidebarrr {
+    background-color: #1d1e22;
+    color: #ffffff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+  }
+  #contenttt {
+    width: 100%;
+    padding: 1rem;
+  }
+  .navouva 
+   {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  
+  .navouva  .iconnn {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: inherit;
+    cursor: pointer;
+  }
+  
+  .navouva  .nav-link {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .navouva  .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .navouva  .kaffkaa {
+    margin-left: auto;
+  }
+  
+  .navouva  .kaffkaa .formmm-input {
+    position: relative;
+  }
+  
+  .navouva  .kaffkaa .formmm-input input {
+    padding: 0.5rem 1rem;
+    width: 250px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: inherit;
+    font-size: inherit;
+  }
+  
+  .navouva  .kaffkaa .formmm-input input:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .navouva  .kaffkaa .formmm-input button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0.5rem;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    }
+    
+    /* RESPONSIVE STYLES */
+    @media only screen and (max-width: 768px) {
+    .containernn {
+    flex-direction: column;
+    }
+    
+    .side-menuuu {
+    display: none;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 4rem);
+    background-color: #fff;
+    overflow-y: auto;
+    z-index: 1;
+    }
+    
+    .side-menuuu.show {
+    display: block;
+    }
+    
+    .brandd .text {
+    display: inline;
+    }
+    
+    .navouva {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    }
+    
+    .navouva .nav-link {
+    display: none;
+    }
+    
+    .navouva .iconnn {
+    margin-left: 1rem;
+    }
+    .navouva .kaffkaa {
+    margin-left: 0;
+    }
+    }
+    
+    /* SCROLLBAR */
+    ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    }
