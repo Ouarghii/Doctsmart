@@ -15,12 +15,14 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import Layout from './Layout';
 
 
 export default function Reviewexp() {
   return (
-    <>
-    <section className='reviewsection'>
+   <div name="review">
+
+        <section className='reviewsection'>
     <div className='color'>
         <h1> Reviews </h1>
     </div>
@@ -35,55 +37,55 @@ export default function Reviewexp() {
         modules={[Pagination, Navigation]}
         className="review">
             <div className='content'>
-                <SwiperSlide className=' slide'>
-                        <img src={person2}  className='image' ></img>
+                <SwiperSlide className='slide'>
+                        <img src={person2}  className='circleimage' ></img>
                         <p> 
                             I cannot thank you enough for your understanding 
                             and support through some difficult times
                             . I would highly recommend your company to anyone.
                             Your company has made our life easier.
                         </p>
-                        <FaQuoteLeft  className='quotes'/>
+                        <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
                             <span className='name'> Brahim 3aftoula </span>
                             <span className='Age'> 67 Y.o</span>
                         </div>
                 </SwiperSlide>
                 <SwiperSlide className=' slide'>
-                        <img src={person1}  className='image' ></img>
+                        <img src={person1}  className='circleimage' ></img>
                         <p> The team of professional caretakers have helped us to improve many aspects
                              of our life, social life included.
                               The personal assistant works hard and knows what they are doing.
                               <br></br>
                                Thank you.
                         </p>
-                        <FaQuoteLeft  className='quotes'/>
+                        <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
                             <span className='name'> Raslen PCD </span>
                             <span className='Age'> 69 Y.o</span>
                         </div>
                 </SwiperSlide>
                 <SwiperSlide className=' slide'>
-                        <img src={person3}  className='image' ></img>
+                        <img src={person3}  className='circleimage' ></img>
                         <p> 
                         I was visiting a number of assisted living facilities last month,
                          and was really impressed by the knowledge of this one.
                           They have nurses on staff in addition to normal caregivers.
                         </p>
-                        <FaQuoteLeft  className='quotes'/>
+                        <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
                             <span className='name'> Mezzi kafka </span>
                             <span className='Age'> 102 Y.o</span>
                         </div>
                 </SwiperSlide>
                 <SwiperSlide className=' slide'>
-                        <img src={person3}  className='image' ></img>
+                        <img src={person3}  className='circleimage' ></img>
                         <p> 
                         I was visiting a number of assisted living facilities last month,
                          and was really impressed by the knowledge of this one.
                           They have nurses on staff in addition to normal caregivers.
                         </p>
-                        <FaQuoteLeft  className='quotes'/>
+                        <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
                             <span className='name'> Mezzi tawnji </span>
                             <span className='Age'> 22 Y.o</span>
@@ -91,8 +93,10 @@ export default function Reviewexp() {
                 </SwiperSlide>
             </div>
        </Swiper>
- 
+       
     </section>
-         </>
+    </div>
+    
+    
   );
 }

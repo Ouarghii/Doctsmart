@@ -7,6 +7,7 @@ const keysecret="raslenraslenraslenraslenraslen"
 
 
 const PatSchema=new mongoose.Schema({
+   
     firstName:{
         type:String,
         required:true,
@@ -55,19 +56,18 @@ const PatSchema=new mongoose.Schema({
     },blood:{
         type:String,
         required:true,
-        unique:true,
-    },allergies:{
+    },
+    allergies:{
         type:String,
         required:true,
-        unique:true,
-    },medications:{
+    },
+    medications:{
         type:String,
         required:true,
-        unique:true,
-    },conditions:{
+    },
+    conditions:{
         type:String,
         required:true,
-        unique:true,
     },
      tokens:[
         {

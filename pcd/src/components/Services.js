@@ -15,7 +15,7 @@ import Navbar from './Navbar';
 
 function ServicePage() {
   return (
-    <div>
+    <div name="Services">
       <div>
       <Navbar />
       </div>
@@ -62,7 +62,7 @@ function ServicePage() {
             <p> We provide treatment and support for cancer patients, including chemotherapy,
                radiation therapy, and other cancer-related services.</p>
           </div>
-          <div className='services1'>
+          {/* <div className='services1'>
             <BsLungsFill className='icons' />
             <h2 style={{marginBottom:'50px'}}> Cardiology </h2>
             <p>We provide care for patients with heart and vascular 
@@ -79,7 +79,7 @@ function ServicePage() {
             <h2 style={{marginBottom:'50px'}}> Mental health </h2>
             <p>We provide care for patients with mental health conditions, including 
               psychiatric evaluations, medication management, and counseling.</p>
-          </div>
+          </div> */}
         </div>
       </div>
 

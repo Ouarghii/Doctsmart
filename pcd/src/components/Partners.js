@@ -34,7 +34,7 @@ const Partner = () => {
     // Set the interval to update the partners every 3 seconds
     const intervalId = setInterval(() => {
       updateSelectedPartners();
-    }, 4000);
+    }, 7000);
 
     // Clean up the interval when the component is unmounted
     return () => clearInterval(intervalId);
@@ -58,6 +58,7 @@ const Partner = () => {
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
+    <div name="partner">
     <animated.div style={props} className="partners">
       <h2>Our Partners</h2>
       <div className="partner-container">
@@ -68,6 +69,7 @@ const Partner = () => {
         ))}
       </div>
     </animated.div>
+    </div>
   );
 };
 

@@ -12,6 +12,7 @@ const port=8009
 // app.get("/",(req,res)=>{
 //     res.status(201).json("server created")
 // })
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors())

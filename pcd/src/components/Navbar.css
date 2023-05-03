@@ -1,37 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Oswald:wght@300&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Oswald';
-    margin-bottom: 15px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-li {
-    text-decoration: none;
-    font-size: 25px;
-}
-.nav-links li:hover{
-    font-size: 35px;
-    color: blue;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-    box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+  
+  nav {
+    height: 80px;
+    width: 100%;
+    background: #0082e6e9;
+    color: white;
     position: fixed;
-    z-index: 999;
-}
-/* .logo{
+    z-index: 1222;
+    top: 0;
+  }
+  
+  label.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+  }
+  label.logo  span {
+    color: #1e212a;
+    font-weight: bold;
+    font-size: 35px;
+  }
+  nav ul {
+    float: right;
+    margin-right: 80px;
+    color: white;
+  }
+  
+  nav ul li {
+    color: white;
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+    line-height: 80px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 7px 14px;
+    border-radius: 3px;
+  }
+  
+  a.active, a:hover {
+    background: #1e212a;
+    color: white;
+  }
+  
+  .checkbtn {
     font-size: 30px;
-} */
-.nav-links{
-    display: flex;
-    justify-content: flex-end;
-    width: 75%;
-}
-
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  @media(max-width:1067px) {
+    label.logo {
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a {
+      font-size: 16px
+    }
+  }
+  
+  @media(max-width: 972px) {
+    .checkbtn {
+      display: block;
+    }
+    nav ul {
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      left: -100%;
+      background: #2c3e50;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li {
+      display: block;
+    }
+    nav ul li a {
+      font-size: 20px;
+      cursor: pointer;
+    }
+    a.active, a:hover {
+      background: none;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }  
+  }
+  
+  
   

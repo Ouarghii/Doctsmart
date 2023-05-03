@@ -8,38 +8,38 @@ import {FaHospitalUser} from 'react-icons/fa'
 import {BiHappyBeaming} from 'react-icons/bi'
 function NumberStats() {
   return (
-    <div className='container1'>
+    <div name ="stats" className='statcontainer'>
         <h1>Our stats</h1>
         <div className='row11'>
-          <div className='services11'>
+          <div className='servicescard'>
           <FaHospitalUser className='icons'/>
           <br></br>
           <CountUp end={350} duration={5}  className="numbers"/>
-            <h2> Medical Staff</h2>
+            <h2 className='servicetext'> Medical Staff</h2>
           </div>
-          <div className='services11'>
+          <div className='servicescard'>
           <FaBed className='icons'/>
           <br></br>
           <CountUp end={1000} duration={4}  className="numbers"/>
-            <h2> beds </h2>
+            <h2 className='servicetext'> beds </h2>
           </div>
-          <div className='services11'>
+          <div className='servicescard'>
           <FaStethoscope className='icons'/>
           <br></br>
           <CountUp end={800} duration={4}  className="numbers"/>
-            <h2> Succesefull Operations </h2>
+            <h2 className='servicetext'> Succesefull Operations </h2>
           </div>
-          <div className='services11'>
+          <div className='servicescard'>
           <BsClockHistory className='icons'/>
           <br></br>
           <CountUp end={20} duration={7}  className="numbers"/> 
-            <h2> Year Experience </h2>
+            <h2 className='servicetext'> Year Experience </h2>
           </div>
-          <div className='services11'>
+          <div className='servicescard'>
           <BiHappyBeaming className='icons'/>
           <br></br>
           <CountUp end={20000} duration={6}  className="numbers">  </CountUp> 
-            <h2> Happy Patient </h2>
+            <h2 className='servicetext'> Happy Patient </h2>
           </div>
 
 

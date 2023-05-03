@@ -13,9 +13,8 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 function Blogs() {
   return (
-    <div >
       
-    <div className='blogs' style={{marginTop:'20px'}} >
+    <div name="blogs" className='blogs' style={{marginTop:'20px'}} >
         <h1>Our Blogs</h1>
         <div className='row1'>
           <div className='servicesbl'>
@@ -59,65 +58,13 @@ function Blogs() {
           </p>
           
           </div>
-          <div className='servicesbl'>
-          <img src={image2}   className="blogimage" />
-          <div className='btnfixé'>
-            <h2>02</h2>
-            <p>march</p>
-            <p>2023</p>
-          </div>
-          <h2> Scary Thing That You Don’t Get Enough Sleep </h2>
-          <p> Far far away, behind the word mountains, 
-            far from the countries Vokalia and Consonantia, there live the blind texts.
-          </p>
-          
-          </div>
-          <div className='servicesbl'>
-          <img src={image2}   className="blogimage" />
-          <div className='btnfixé'>
-            <h2>02</h2>
-            <p>march</p>
-            <p>2023</p>
-          </div>
-          <h2> Scary Thing That You Don’t Get Enough Sleep </h2>
-          <p> Far far away, behind the word mountains, 
-            far from the countries Vokalia and Consonantia, there live the blind texts.
-          </p>
          
-          </div>
+          
+          
+        </div>
 
-
-          <div className='servicesbl'>
-          <img src={image3}   className="blogimage" />
-          <div className='btnfixé'>
-            <h2>14</h2>
-            <p>december</p>
-            <p>2023</p>
-          </div>
-          <h2> Scary Thing That You Don’t Get Enough Sleep </h2>
-          <p> Far far away, behind the word mountains, 
-            far from the countries Vokalia and Consonantia, there live the blind texts.
-          </p>
-          
-          </div>
-          
-          
-        </div>
-        <div  style={{ marginTop: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <p className='btn111'>Read More</p>
-        </div>
-        <div>
-          <NumberStats />
-        </div>
-        <div>
-          <Partner />
-        </div>
-        <div>
-        {/* <Footer/> */}
-        </div>
-      </div>
       </div>
   );
 }
 
-export default Blogs;
+  export default Blogs;

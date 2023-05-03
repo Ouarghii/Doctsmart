@@ -13,37 +13,35 @@ import Fav from '../../components/Fav'
 import { Button } from '@mui/material'
 import reception from '../../assets/reception.mp4'
 import { Link } from 'react-router-dom'
+
 const Dashboard = (props) => {
-  
-  
   const {logindata,setLoginData} = useContext(LoginContext)
-//   console.log(logindata.ValidRecepOne.email);
-console.log(logindata.ValidRecepOne?.email);
-  const history=useHistory()
-  const DashboardValid=async()=>{
-     let token=localStorage.getItem("recepsdatatoken")
+  // console.log(logindata.ValidRecepOne?.email);
+  const history = useHistory()
+
+  const DashboardValid = async () => {
+     let token = localStorage.getItem("recepsdatatoken")
      
-     const res=await fetch("/RecepValid",{
-        method:"GET",
-        headers:{
-            "Content-Type":"application/json",
-            "Authorization":token
+     const res = await fetch("/RecepValid", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
         }
      })
-     const data=await res.json()
-    //  console.log(data);
-    if(data.status===401 || !data){
+     const data = await res.json()
+     if (data.status === 401 || !data) {
        history("*")
-    }else{
-        console.log("user verify");
+     } else {
+        console.log("user verify")
         setLoginData(data)
         history("/dash")
-    }
+     }
   }
-  useEffect(()=>{
+
+  useEffect(() => {
     DashboardValid()
-  },[])
-  
+  }, [])
   return (
     <div>
     <div className="background-video" style={{ top: 0, left: 0 }}>

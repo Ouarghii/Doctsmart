@@ -1,0 +1,43 @@
+.appointment-wrapper {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .custom-calendar {
+    font-size: 18px;
+    background: transparent;
+  }
+  
+  
+  
+  .react-calendar__tile--active {
+    background-color: rgb(25, 102, 92);
+    
+  }
+  .appointment-details {
+    width: 70%;
+    
+  }
+  .custom-calendar {
+ 
+    width: 500px;
+  }
+  .cell {
+    padding: 0 10px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .appointment-wrapper {
+      flex-direction: row;
+    }
+  
+    .appointment-details {
+      width: 50%;
+      
+    }
+  
+    .appointment-calendar {
+      width: 60%;
+      
+    }
+  }

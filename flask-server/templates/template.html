@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    
+  </head>
+  <body>
+    <h1>DISEASES</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Disease</th>
+          <th>Probability</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+          <tr>
+            <td class="index">{{ loop.index }}</td>
+            <td class="disease">{{ row.disease }}</td>
+            <td class="graph">
+              <div class="skill-box">
+                <div class="skill-bar">
+                  <span class="skill-per html"  style="width:{{ "{:.3f}".format(row.probability) }}%">
+                    <span class="tooltip">{{ "{:.3f}".format(row.probability) }}%</span>
+                  </span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <!-- <button class="predictbtn" > -->
+      <a href="/sendemail">Send Mail!</a>  
+      <!-- <svg class="border-container">
+        <rect pathLength="100" class="border-line"></rect>
+      </svg>
+    </button> -->
+    
+  </body>
+</html>

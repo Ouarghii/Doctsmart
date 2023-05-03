@@ -5,10 +5,13 @@ import log from '../../assets/log.svg'
 import reg from '../../assets/register.svg'
 import { message, Form, Input, Button } from 'antd'
 import { useHistory } from 'react-router-dom';
+import  {useDispatch} from'react-redux'
+import { showLoading,hideLoading } from '../../redux/features/alertSlice';
 
 function Tbib() {
 
   const navigate = useHistory()
+  const dispatch =useDispatch()
   const [isSignUp, setIsSignUp] = useState(false);
   const [passShow, setPassShow] = useState(false)
 
@@ -22,7 +25,9 @@ function Tbib() {
 
   const onFinish = async (values) => {
     try {
+      dispatch(showLoading())
       const res = await axios.post('/docregister', values)
+      dispatch(hideLoading())
       if (res.data.success) {
         message.success('Register Successfully')
         setIsSignUp(false);
@@ -30,21 +35,25 @@ function Tbib() {
         message.error(res.data.message)
       }
     } catch (error) {
+      dispatch(hideLoading())
       console.log(error)
       message.error('Something Went Wrong')
     }
   }
   const onFinishHandler=async(values)=>{
      try {
+        dispatch(showLoading())
         const res=await axios.post('/doclogin',values)
+        dispatch(hideLoading())
         if(res.data.success){
           localStorage.setItem('token',res.data.token)
           message.success('Login Successfully')
-          navigate.push('/doctorapp')
+          navigate.push('/doctorapp/patients')
         }else{
           message.error(res.data.message)
         }
      } catch (error) {
+        dispatch(hideLoading())
         console.log(error)
         message.error('something went wrong')
      }
@@ -54,28 +63,28 @@ function Tbib() {
     <div className={`container12 ${isSignUp ? 'sign-up-mode' : ''}`} >
       <div className="formss-container">
         <div className="signin-signup">
-          <Form className="form sign-in-form" onFinish={onFinishHandler} T style={{background:'#232323',borderRadius:'10px'}}>
+          <Form className="form sign-in-form" onFinish={onFinishHandler} >
             <h2 className="title">Sign in</h2>
             <Form.Item name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
-              <Input prefix={<i className="fas fa-user" />} placeholder="your email" />
+              <Input className='Doctorinput' prefix={<i className="fas fa-user" />} placeholder="your email" />
             </Form.Item>
             <Form.Item name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
-              <Input.Password prefix={<i className="fas fa-lock" />} placeholder="Password" />
+              <Input.Password className='Doctorinput' prefix={<i className="fas fa-lock" />} placeholder="Password" />
             </Form.Item>
             <Button type="primary" htmlType="submit" className="btinn solid">
               Login
             </Button>
           </Form>
-          <Form className="form sign-up-form" onFinish={onFinish}style={{background:'#232323',marginLeft:'30px',borderRadius:'10px'}}>
+          <Form className="form sign-up-form" onFinish={onFinish}>
             <h2 className="title">Sign up</h2>
             <Form.Item name="username" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input prefix={<i className="fas fa-user" />} placeholder="Username" />
+              <Input className='Doctorinput' prefix={<i className="fas fa-user" />} placeholder="Username" />
             </Form.Item>
             <Form.Item name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
-              <Input prefix={<i className="fas fa-envelope" />} placeholder="Email" />
+              <Input className='Doctorinput' prefix={<i className="fas fa-envelope" />} placeholder="Email" />
             </Form.Item>
             <Form.Item name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
-              <Input.Password prefix={<i className="fas fa-lock" />} placeholder="Password" />
+              <Input.Password className='Doctorinput' prefix={<i className="fas fa-lock" />} placeholder="Password" />
             </Form.Item>
             
         <Button type="primary" htmlType="submit" className="btinn">

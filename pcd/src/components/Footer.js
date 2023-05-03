@@ -6,63 +6,109 @@ import {FaInstagram} from 'react-icons/fa'
 import {FaLinkedinIn} from 'react-icons/fa'
 import {FaTwitter} from 'react-icons/fa'
 import {FaYoutube} from 'react-icons/fa'
-
+import dct from '../assets/footerimg.png' 
 import React from 'react'
 import './Footer.css'
+import { Link } from 'react-scroll'
 function Footer() {
   return (
-    <div className='leFooter'>
-    <footer className="footer-distributed">
-
-        <div className="footer-left">
-            <h3>Doct<span>Smart</span></h3>
-
-            <p className="footer-links">
-                <a href="#">Home</a>
-                |
-                <a href="#">About</a>
-                |
-                <a href="#">Contact</a>
-                |
-                <a href="#">Blog</a>
-            </p>
-
-            <p className="footer-company-name">Copyright © 2023 <strong>DoctSmart</strong> All rights reserved</p>
-        </div>
-
-        <div className="footer-center">
-            <div>
-                <BsPinMapFill className="map"></BsPinMapFill>
-                <p><span>Mannouba</span>
-                    Tunisia</p>
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-cta pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="cta-text">
+                                    <h4>Find us</h4>
+                                    <span>Mannouba Tunisie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-phone"></i>
+                                <div class="cta-text">
+                                    <h4>Call us</h4>
+                                    <span>+ 216 58 039 513</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="far fa-envelope-open"></i>
+                                <div class="cta-text">
+                                    <h4>Mail us</h4>
+                                    <span>Doctsmarttn@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="footer-content pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 mb-50">
+                            <div class="footer-widget">
+                                <div class="footer-logo">
+                                    <a href="index.html">DoctSmart</a>
+                                </div>
+                                <div class="footer-text">
+                                    <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                                    elit,Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                            <div class="footer-widget">
+                                <div class="footer-widget-heading">
+                                    <h3>Footer Navbar</h3>
+                                </div>
+                                <ul style={{color:'white'}}>
+                                <li><Link to="Home" smooth={true} duration={500}>Home</Link></li>
+                  <li><Link to="Services" smooth={true} duration={500}>Services</Link></li>
+                  <li><Link to="review" smooth={true} duration={500}>Review</Link></li>
+                  <li><Link to="stats" smooth={true} duration={500}>Statistics</Link></li>
+                  <li><Link to="blog" smooth={true} duration={500}>Blog</Link></li>
+                  <li><Link to="Contact" smooth={true} duration={500}>Contact</Link></li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                            <div class="footer-widget">
+                                <div class="footer-widget-heading">
+                                    <h3>Follow Us</h3>
+                                </div>
+                                <div class="footer-social-icon">
+                                    <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                    <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                    <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 mb-50">
+                            <div class="footer-widget">
+                               <img  src={dct} className='imagedoct'></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div className='phonediv'>
-                <BsFillTelephoneFill className="phone"></BsFillTelephoneFill>
-                <p>+216 73 777 777</p>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div class="copyright-text">
+                                <p>Copyright &copy; 2023, All Right Reserved to DoctSmart</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className='envelopediv'>
-                <BsFillEnvelopeFill className="envelope"></BsFillEnvelopeFill>
-                <p><a href="mailto:mohamed.mezzi@ensi-uma.tn">Doctsmart@aftoula.tn</a></p>
-            </div>
-        </div>
-        <div className="footer-right">
-            <p className="footer-company-about">
-                <span>About Our Project</span>
-                <strong>DoctSmart </strong> is a medical webapplication that help doctors and make it easier to the patient in 
-                hospitals  
-            </p>
-            <div className="footer-icons">
-                <a href="#"><FaFacebookF></FaFacebookF> </a>
-                <a href="#"><FaInstagram></FaInstagram></a>
-                <a href="#"><FaLinkedinIn></FaLinkedinIn></a>
-                <a href="#"><FaTwitter></FaTwitter></a>
-                <a href="#"><FaYoutube></FaYoutube></a>
-            </div>
-        </div>
-    </footer>
-    </div>
+        </footer>
   )
 }
 
-export default Footer
+export default Footer ;

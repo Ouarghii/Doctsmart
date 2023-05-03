@@ -1,0 +1,39 @@
+.doctors-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2rem 0;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 0.5rem;
+  }
+  
+  thead {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:hover {
+    background-color: #ddd;
+  }
+  
+  p {
+    margin: 2rem 0;
+  }
+  

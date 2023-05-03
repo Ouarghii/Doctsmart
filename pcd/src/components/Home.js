@@ -8,10 +8,17 @@ import Helps from './Helps';
 import Footer from './Footer';
 import Header from './auth/Header';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
-
 import './home.css';
 import Reviewexp from './Review';
 import Contactus from './contactus';
+import NumberStats from './SiteNumbers';
+import Partner from './Partners';
+import Blogs from './blog';
+import FirstHome from './firsthome';
+import Logincard from './logincard';
+import ServicePage from './Services';
+import Habata from './habata';
+import PredDis from './Symptom';
 
 const Home = () => {
   useEffect(() => {
@@ -32,19 +39,17 @@ const Home = () => {
   return (
     <div>
       <Navbar className="transparent-nav" />
-
-      <div className="slow-reveal-container">
-        <Example className="slow-reveal" />
-        <Diag className="slow-reveal" />
-        <Cards className="slow-reveal" />
-        <Fav className="slow-reveal" />
-        <Helps className="slow-reveal" />
-        <Reviewexp />
-        {/* <Contactus /> */}
-       {/*<Footer className="slow-reveal" />*/} 
-        
-      </div>
+      <FirstHome id='Home' />
+      <ServicePage id='Services'/>
+      <NumberStats id='stats'/>   
+      <Blogs id='blogs'/>  
+      <Reviewexp id="review"/>
+      <Partner id="partner" className="partn"/> 
+      <Habata id="team"/>
+      <Footer/> 
+      {/* <PredDis/> */}
     </div>
+
   );
 };
 

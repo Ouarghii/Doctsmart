@@ -1,5 +1,6 @@
 import React,{useEffect} from 'react'
 import axios from 'axios'
+import Layout from '../Layout'
 const Dochome = () => {
   //login user data
   const getDoctorData=async()=>{
@@ -13,10 +14,11 @@ const Dochome = () => {
       console.log(error)
     }
   }
+  useEffect(()=>{
+    getDoctorData()
+  })
   return (
-    <div>
-        <h1>Home Page</h1>
-    </div>
+    <Layout/>
   )
 }
 

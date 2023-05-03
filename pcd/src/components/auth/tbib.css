@@ -61,8 +61,8 @@
   }
   
   .inputt-field {
-    max-width: 380px;
-    width: 100%;
+    max-width: 480px;
+    width: 120%;
     background-color: #f0f0f0;
     margin: 10px 0;
     height: 55px;
@@ -140,6 +140,14 @@
     cursor: pointer;
     transition: 0.5s;
   }
+  /****************input*************/
+.Doctorinput{
+  width: 400px;
+  height: 50px;
+}
+
+
+
   
   .btinn:hover {
     background-color: #4d84e2;

@@ -1,6 +1,7 @@
 const docModel=require('../models/DocSchema')
 const bcrypt=require("bcryptjs")
 const jwt=require('jsonwebtoken')
+const doctorModel=require('../models/doctorModel')
 const keysecret="raslenraslenraslenraslenraslen"
 //register
 const registerController=async(req,res)=>{
@@ -53,7 +54,8 @@ const authController=async(erq,res)=>{
                 success:true,
                 data:{
                     username:doctor.username,
-                    email:doctor.email
+                    email:doctor.email,
+                    
                 }
             })
         }
@@ -66,5 +68,38 @@ const authController=async(erq,res)=>{
         })
     }
 }
+const applyDoctorController = async (req, res) => {
+    try {
+      const newDoctor = new doctorModel({ ...req.body, status: 'pending' });
+      await newDoctor.save();
+  
+      const adminUser = await userModel.findOne({ isAdmin: true });
+      const notification = adminUser.notification;
+  
+      notification.push({
+        type: 'apply-doctor-request',
+        message: `${newDoctor.firstName} ${newDoctor.lastName} has applied for a doctor account.`,
+        data: {
+          doctorId: newDoctor._id,
+          name: newDoctor.firstName + ' ' + newDoctor.lastName,
+          onClickPath: '/doctorapp/doctors',
+        },
+      });
+  
+      await userModel.findByIdAndUpdate(adminUser._id, { notification });
+      res.status(201).send({
+        success: true,
+        message: 'Doctor account applied successfully.',
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({
+        success: false,
+        error: error.message,
+        message: 'Error while applying for doctor.',
+      });
+    }
+  };
+  
 
-module.exports={loginController,registerController,authController}
+module.exports={loginController,registerController,authController,applyDoctorController}

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './helps.css'
 const Helps = () => {
     const [name, setName] = useState("");
   const [email, setEmail] = useState("");

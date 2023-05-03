@@ -22,7 +22,24 @@ const DocSchema=new mongoose.Schema({
         type:String,
         required:[true,'password is require'],
         minlength:8
-    }
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+      },
+      isDoctor: {
+        type: Boolean,
+        default: true,
+      },
+      notifcation: {
+        type: Array,
+        default: [],
+      },
+      seennotification: {
+        type: Array,
+        default: [],
+      },
+   
 })
 const docModel=mongoose.model('doctors',DocSchema)
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Header from './Header'
+
 import './mix.css'
-import myvideo from '../../assets/myvideo.mp4'
+
 import Typical from 'react-typical';
 import {useHistory} from 'react-router-dom'
 
@@ -53,7 +53,7 @@ const LoginR = () => {
             //    console.log(res);
                 if(res.status===201){           
                    localStorage.setItem("recepsdatatoken",res.result.token)
-                   history.push("/dash")
+                   history.push("/dash/patients")
                    setInpval({...inpval,email:"",password:""})
                 }else{
                     alert("details invalid")
@@ -67,11 +67,10 @@ const LoginR = () => {
     
   return (
     
-    <div className="background-video" style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
-          <video autoPlay loop muted style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+     <div className="background-video" style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
+           {/* <video autoPlay loop muted style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
         <source src={myvideo} type="video/mp4" />
-      </video>
-        <Header />
+      </video> */}
         <section>
            
             <div className='form_data' style={{width:'1500px',backgroundColor:'white'}}>
@@ -102,8 +101,12 @@ const LoginR = () => {
                     <p style={{fontSize:'20px'}}>Don't have an Account ? <NavLink style={{color:'blue'}} to="/registerr">Sign Up</NavLink></p>
                 </form>
             </div>
-        </section>
-    </div>
+        </section> 
+    
+
+
+
+    // </div>
   )
 }
 

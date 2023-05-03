@@ -3,7 +3,8 @@ import './RegistrationForm.css';
 import './mix.css'
 
 import Header from './Header';
-import myvideo from '../../assets/myvideo.mp4'
+import myvideo from '../../assets/video.mp4'
+import Layout1 from '../receptionnist/Layout1';
 
 const RegistrationForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -144,11 +145,12 @@ const setVal=(e)=>{
     }
  }
   return (
-    <div className="background-video" style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
-          <video autoPlay loop muted style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+   <Layout1>
+    <div >
+          <video autoPlay loop muted>
         <source src={myvideo} type="video/mp4" />
       </video>
-        <Header />
+       
         <div className="form-container11">
   <div className="left-column">
     <div className="form-group">
@@ -231,7 +233,7 @@ const setVal=(e)=>{
   </div>
 </div>
     </div>
-    
+    </Layout1>
   );
 };
 
