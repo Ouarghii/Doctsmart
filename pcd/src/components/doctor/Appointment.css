@@ -1,0 +1,30 @@
+.app-cover{
+    width: 100%;
+    background: url('../../assets/appointment.jpg');
+    background-size: cover;
+}
+.appointment-details {
+    width: 1400px;
+    position: relative;
+    margin-left: 24%;
+    margin-top: 8%;
+}
+.btttnnapp:hover {
+   background-color: transparent;
+   color:#fff;
+}
+a:hover {
+    color: #fff;
+}
+.containerpati {
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    position: relative;
+    
+}

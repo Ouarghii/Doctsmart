@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import {NavLink} from 'react-router-dom'
 import Header from './Header'
-import './mix.css'
+import './RegisterR.css'
 import myvideo from '../../assets/myvideo.mp4'
 import Typical from 'react-typical'
+import logo from '../../assets/logodoc.png'
 const RegisterR = () => {
     const [passShow,setPassShow]=useState(false)
     const [cpassShow,setCPassShow]=useState(false)
@@ -69,52 +70,64 @@ const RegisterR = () => {
         }
      }
   return (
-    <div className="background-video" style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
-    <video autoPlay loop muted style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-  <source src={myvideo} type="video/mp4" />
-</video>
-         <Header />
+    <div className="background-video1" style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
+
+         
         <section>
-            <div className='form_data' style={{width:'1300px',backgroundColor:'white'}}>
+        <div className='login-box2' >
+        <div className='doctsmartlogo2'>
+  <a href="/" >
+    <img src={logo} alt=''  />
+  </a>
+</div>
                 <div className='form_heading'>
-                    <h1>Sign Up</h1>
-                    <Typical
-  steps={['Hi, Please Signup.', 1000, 'Enter your informations.', 1000]}
-  loop={Infinity}
-  wrapper="h2" 
-/>
+                    <h2>Welcome ,</h2>
+                    <p style={{color:'#fff',fontSize:'20px',fontWeight:'500'}}>receptionnist registration</p>
+                    
 </div>
                 <form >
-                    <div className='form_input'>
-                        <label htmlFor='fname' style={{fontSize:'25px',marginBottom:'0.5px'}}>Name :</label><br/>
-                        <input type="name" onChange={setVal}  value={inpval.fname} name="fname" id="fname" placeholder='Enter Your Name ' />
+                <div className='user-box'>
+                        <input type="name" onChange={setVal}  value={inpval.fname} name="fname" id="fname" />
+                        <label htmlFor='fname' style={{fontSize:'20px'}}>Name :</label><br/>
+
                     </div>
-                    <div className='form_input'>
-                        <label htmlFor='email' style={{fontSize:'25px',marginBottom:'0.5px'}}>Email :</label><br/>
-                        <input type="email" onChange={setVal} value={inpval.email} name="email" id="email" placeholder='Enter Your Email Address ' />
+                    <div className='user-box'>
+                    <input type="email" onChange={setVal} value={inpval.email} name="email" id="email"  />
+                        <label htmlFor='email' style={{fontSize:'20px'}}>Email :</label><br/>
+                        
                     </div>
-                    <div className='form_input' >
-                        <label htmlFor='password' style={{fontSize:'25px',marginBottom:'0.5px'}}>Password :</label><br/>
+                    <div className='user-box'>
                         <div className='two'>
-                        <input type={!passShow ? "password" : "text"} onChange={setVal} value={inpval.password} name="password" id="password" placeholder='Enter Your Password ' />
+                        <input type={!passShow ? "password" : "text"} onChange={setVal} value={inpval.password} name="password" id="password"  />
                         <div className='showpass' onClick={()=>setPassShow(!passShow)}>
                             {!passShow ? "Show":"Hide"}
                         </div>
+                        <label htmlFor='password' style={{fontSize:'20px'}}>Password :</label><br/>
+
                         </div>
                         
                     </div>
-                    <div className='form_input' >
-                        <label htmlFor='password' style={{fontSize:'25px',marginBottom:'0.5px'}}>Confirm Password :</label><br/>
+                    <div className='user-box'>
+                       
                         <div className='two'>
-                        <input type={!cpassShow ? "password" : "text"} onChange={setVal} value={inpval.cpassword} name="cpassword" id="cpassword" placeholder='Confirm Password ' />
+                        <input type={!cpassShow ? "password" : "text"} onChange={setVal} value={inpval.cpassword} name="cpassword" id="cpassword"/>
                         <div className='showpass' onClick={()=>setCPassShow(!cpassShow)}>
                             {!cpassShow ? "Show":"Hide"}
                         </div>
+                        <label htmlFor='password' style={{fontSize:'20px'}}>Confirm Password :</label><br/>
                         </div>
                         
                     </div>
-                    <button className='btn' onClick={addUserdata}>Sign Up</button>
-                    <p style={{fontSize:'20px'}}>Already have an Account ? <NavLink style={{color:'blue'}} to="/loginr">Login</NavLink></p>
+                    <a href="#" onClick={addUserdata}><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Sign up
+    </a>
+    <div>
+    <p style={{color:'#fff',fontSize:'15px',fontWeight:'500',marginLeft:'25px'}}>Already have an Account ? <NavLink  style={{color:'#fff',position:'relative',top:'20px'}}  to="/recepauth">Login</NavLink></p>
+
+    </div>
                 </form>
             </div>
         </section>

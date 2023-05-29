@@ -7,6 +7,7 @@ import {FaLinkedinIn} from 'react-icons/fa'
 import {FaTwitter} from 'react-icons/fa'
 import {FaYoutube} from 'react-icons/fa'
 import dct from '../assets/footerimg.png' 
+import logo from '../assets/logodoc2.png'
 import React from 'react'
 import './Footer.css'
 import { Link } from 'react-scroll'
@@ -50,9 +51,8 @@ function Footer() {
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 mb-50">
                             <div class="footer-widget">
-                                <div class="footer-logo">
-                                    <a href="index.html">DoctSmart</a>
-                                </div>
+                            <label className="logo"><img src={logo} alt='' style={{height:'120px',width:'200px',marginTop:'-25px',marginBottom:'10px'}}/></label>
+
                                 <div class="footer-text">
                                     <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
                                     elit,Lorem ipsum dolor sit amet.</p>

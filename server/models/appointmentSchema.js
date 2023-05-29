@@ -27,6 +27,7 @@ const appointmentSchema = new mongoose.Schema({
     },
     note: {
       type: String,
+      
     },
   });
 

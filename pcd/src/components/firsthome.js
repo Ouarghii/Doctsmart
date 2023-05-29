@@ -2,7 +2,7 @@ import Typewriter from './typewriter';
 import { Link } from 'react-router-dom';
 
 function FirstHome() {
-  const phrases = ['Welcome To DoctSmart !', 'KAFKA el haj', 'Ya weldi hbata zeyda aalkher !'];
+  const phrases = ['Welcome To DoctSmart !'];
 
   return (
     <div name="Home" className='home'>

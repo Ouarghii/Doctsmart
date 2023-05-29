@@ -5,18 +5,19 @@ import './appoi.css'
 import Layout from "../Layout";
 import Reviewexp from "../Review";
 import Helps from "../Helps";
-import vid from '../../assets/appontment.mp4'
+import vid from '../../assets/appointment.gif'
 import UpdatedAppointmentForm from "./UpdatedAppointmentForm"; // import the UpdatedAppointment component
-
+import './Appointment.css'
 import AppointmentForm from "./AppointmentForm";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Modal, Button } from 'react-bootstrap'; // import the Bootstrap modal components
 const AppointmentDetails = () => {
   // State for appointment details form
   const [appointments, setAppointments] = useState([]);
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
-
+  const [showModal, setShowModal] = useState(false); // State to show or hide the modal
 
   useEffect(() => {
     // Fetch appointment data from the server
@@ -42,17 +43,41 @@ const AppointmentDetails = () => {
       );
       setSelectedAppointment(null);
       setShowUpdateForm(false);
+      setShowModal(false);
     });
   };
 
+  const handleShowUpdateForm = (appointment) => {
+    setSelectedAppointment(appointment);
+    setShowUpdateForm(true);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => setShowModal(false); // Function to hide the modal
+
+  const handleSendAppointment = (appointment) => {
+    const requestData = {
+      recipients: appointment.recipients // Add the recipients as needed
+    };
+  
+    axios.post("/api/update-appointment", requestData)
+      .then((response) => {
+        // Handle the response if needed
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the request
+      });
+  };
 
   return (
     <div className="appointment-details" style={{ background: "rgba(125,125,125,0.25)" }}>
       <div>
         <h2>Appointment Details</h2>
-        <table className="table">
+  
+        
+          <table className="containerpati">
           <thead>
-            <tr>
+          <tr>
               <th className="cell" style={{ color: "white" }}>
                 Name
               </th>
@@ -77,119 +102,117 @@ const AppointmentDetails = () => {
             </tr>
           </thead>
           <tbody>
-            {appointments.map((appointment) => (
+            {appointments.map((appointment, index) => (
               <tr key={appointment._id}>
-                <td className="cell">{appointment.name}</td>
-                <td className="cell">{appointment.email}</td>
-                <td className="cell">{appointment.phone}</td>
-                <td className="cell">{appointment.date}</td>
-                <td className="cell">{appointment.time}</td>
-                <td className="cell">{appointment.note}</td>
-                <td className="cell">
-                  <div style={{ display: 'flex',flexDirection:'column' }}>
-                  <button className="btn" onClick={() => {
-  if (window.confirm('Are you sure you want to delete this appointment?')) {
-    handleDeleteAppointment(appointment._id);
-  }
-}}>
-  Delete
-</button>
-                    <button className="btn btn-success" style={{ marginLeft: '10px' }} onClick={() => {
-                      setSelectedAppointment(appointment);
-                      setShowUpdateForm(true);
-                    }}>
-                      Update
-                    </button>
-                    <button className="btn"><Link to='/diseasepredection'>Approved</Link></button>
-                  </div>
-</td>
-              </tr>
+              <td className="cell">{appointment.name}</td>
+              <td className="cell">{appointment.email}</td>
+              <td className="cell">{appointment.phone}</td>
+              <td className="cell">{new Date(appointment.date).toLocaleDateString()}</td>
+              <td className="cell">{appointment.time}</td>
+              <td className="cell">{appointment.note}</td>
+              <td className="cell">
+                <div style={{ display: 'flex',flexDirection:'column' }}>
+                  <button className="btttnn btn-danger" onClick={() => {
+                    if (window.confirm('Are you sure you want to delete this appointment?')) {
+                      handleDeleteAppointment(appointment._id);
+                    }
+                  }}>
+                    Delete
+                  </button>
+                  {/* <button className="btttnn btn-primary" style={{ marginTop: '10px' }} onClick={() => {
+                    handleShowUpdateForm(appointment);
+                  }}>
+                    Update
+                  </button> */}
+                  <button className="btttnnapp" onClick={handleSendAppointment} style={{ marginTop: '10px' }} ><Link to='/diseasepredection' style={{ color: '#1f212a',textDecoration:'none' }}>Consultation</Link></button>
+                </div>
+              </td>
+            </tr>
             ))}
           </tbody>
-        </table>
+          </table>
+
       </div>
-      {showUpdateForm && (
-        <div className="alert">
-          <div className="alert-container">
-            <button className="close-button" onClick={() => setShowUpdateForm(false)}>
-              X
-            </button>
-            <h3>Update Appointment</h3>
-            <AppointmentForm
+      {/* Show the UpdatedAppointmentForm component inside the Bootstrap modal */}
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Update Appointment</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {showUpdateForm && selectedAppointment && (
+            <UpdatedAppointmentForm
               appointment={selectedAppointment}
               handleSubmit={handleUpdateAppointment}
-              />
-              </div>
-              </div>
-              )}
+            />
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+    </Modal>
     </div>
   );
 };
 
 const AppointmentCalendar = () => {
-  // State for calendar
   const [date, setDate] = useState(new Date());
-  const [showHelps, setShowHelps] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const handleDateChange = (value) => {
-    setDate(value);
+  const handleShowModal = () => {
+    setShowModal(true);
   };
-  const handleDayClick = () => {
-    setShowHelps(true);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
-  const handleAlertClose = () => {
-    setShowHelps(false);
-  };
+
   const tileClassName = ({ date, view }) => {
-    // Add custom CSS class for month element
     if (view === 'month') {
       return date.getMonth() === new Date().getMonth() ? 'current-month' : null;
     }
-    // Add custom CSS class for day element
     if (view === 'day') {
       return date.getDay() === 0 || date.getDay() === 6 ? 'weekend-day' : null;
     }
-  }
+  };
 
-
+  const handleDateClick = (value) => {
+    setDate(value);
+    handleShowModal();
+  };
 
   return (
     <div className="appointment-calendar">
-    {showHelps ? (
-      <div className="alert">
-        <div className="alert-container">
-          <button className="close-button" onClick={handleAlertClose}>
-            X
-          </button>
-          <AppointmentForm />
-        </div>
+      <div className="appointment-wrapper">
+        <Calendar value={date} onClickDay={handleDateClick} tileClassName={tileClassName} className="custom-calendar" />
       </div>
-    ) : (
-      <>
-        <h2>Appointment Calendar</h2>
-        <Calendar
-          className="custom-calendar"
-          onChange={handleDateChange}
-          onClickDay={handleDayClick}
-          value={date}
-        />
-      </>
-    )}
-  </div>
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Appointment</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <AppointmentForm handleCloseModal={handleCloseModal} />
+        </Modal.Body>
+      </Modal>
+    </div>
   );
 };
 
 
 const Appointment = () => {
   return (
-    <Layout>
-       <video src={vid} autoPlay loop muted />
+    <div className='app-cover'>
+    <Layout >
+      
          <div className="appointment-wrapper">
         
-      <AppointmentCalendar />
+      {/* <AppointmentCalendar /> */}
       <AppointmentDetails />
     </div>
     </Layout>
+    </div>
    
   );
 };

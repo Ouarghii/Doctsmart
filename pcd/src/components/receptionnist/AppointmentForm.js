@@ -21,8 +21,9 @@ const AppointmentList = () => {
 
   return (
     <div className="appointment-list-wrapperrr">
-      <h2>Appointments</h2>
-      <table>
+
+      <h2 style={{marginBottom:'-20px',marginTop:'20px'}}>Appointments</h2>
+      <table className="containerpati">
         <thead>
           <tr>
             <th>Name</th>
@@ -30,7 +31,6 @@ const AppointmentList = () => {
             <th>Phone</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Note</th>
           </tr>
         </thead>
         <tbody>
@@ -39,9 +39,8 @@ const AppointmentList = () => {
               <td>{appointment.name}</td>
               <td>{appointment.email}</td>
               <td>{appointment.phone}</td>
-              <td>{appointment.date}</td>
+              <td>{new Date(appointment.date).toLocaleDateString()}</td>
               <td>{appointment.time}</td>
-              <td>{appointment.note}</td>
             </tr>
           ))}
         </tbody>
@@ -85,13 +84,13 @@ const AppointmentForm1 = () => {
   };
 
   return (
+    <div className="appointcontainer">
     <Layout1>
-      <video src={pex} muted autoPlay loop />
-      <div style={{display:'flex'}}>
+      <div className="pagecontainer" style={{display:'flex'}}>
       <div className="appointment-form-wrapperrr">
         <div className="aaappointment-form">
           <h2>Book an Appointment</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="formulaire">
             <div className="formm-field">
               <label className="labell" htmlFor="name">Name:</label>
               <input
@@ -152,18 +151,7 @@ const AppointmentForm1 = () => {
             style={{ border: "black" }}
           />
         </div>
-        <div className="form-field">
-          <label className="labell" htmlFor="note">Note:</label>
-          <textarea
-            id="note"
-            name="note"
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            rows="2.5"
-            style={{ border: "black" }}
-          ></textarea>
-        </div>
-        <button className="bnt" type="submit">Submit</button>
+        <button className="bntpulse" type="submit">Submit</button>
       </form>
     </div>
   
@@ -172,6 +160,7 @@ const AppointmentForm1 = () => {
   <AppointmentList />
   </div>
 </Layout1>
+</div>
 );
 };
 

@@ -145,11 +145,10 @@ const setVal=(e)=>{
     }
  }
   return (
+    <div className='registrationdiv'>
    <Layout1>
     <div >
-          <video autoPlay loop muted>
-        <source src={myvideo} type="video/mp4" />
-      </video>
+          
        
         <div className="form-container11">
   <div className="left-column">
@@ -234,6 +233,7 @@ const setVal=(e)=>{
 </div>
     </div>
     </Layout1>
+    </div>
   );
 };
 

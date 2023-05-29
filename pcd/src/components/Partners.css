@@ -3,8 +3,9 @@
 .partners {
    position: relative;
    width: 100%;
-   height: 40vh;
-   margin-top: 2%; 
+   height: 500px;
+   margin-top: 15px; 
+   margin-bottom: 25px;
    padding: 2%; 
 }
 

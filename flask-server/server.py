@@ -1,4 +1,4 @@
-from flask import Flask, render_template,render_template_string , session
+from flask import Flask,redirect, render_template,render_template_string,render_template_string , session
 import warnings
 import numpy as np
 import pandas as pd
@@ -295,51 +295,37 @@ def send_email():
         </head>
           <body>
           <h2>WELCOME TO DOCTSMART </h2>
-          <p class="doctorname"> <b> Doctor </b> : <sup>Dr</sup> Brahim 3aftoula </p>
+          <p class="doctorname"> <b> Doctor </b> : <sup>Dr</sup> Doctor20 </p>
           <p class="date"> <b> Date </b> : /04/2023</p>
-          <p> <b> FirstName </b> : Ibrahim </p>
-          <p> <b> LastName </b>: 3aftoula </p>
-          <p> <b> Phone Num </b>: +216 20 000 000 </p>
+          <p> <b> FirstName </b> : Raslen </p>
+          <p> <b> LastName </b>: Ouarghi </p>
+          <p> <b> Phone Num </b>: +216 58 039 513 </p>
           <div class="three">
-            <h1>DISEASES</h1>
+            <h1>Consultation Result</h1>
           </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Index</th>
-                  <th>Disease</th>
-                  <th>Probability</th>
-                  <th>Graph</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for row in rows %}
-                  <tr>
-                    <td class="index1">{{ loop.index }}</td>
-                    <td class="disease1">{{ row.disease }}</td>
-                    <td class="disease1">
-                        {{ "{:.3f}".format(row.probability) }}%
-                    </td>
-                    <td class="graph1">
-                      <div class="skill-box">
-                        <div class="skill-bar">
-                          <span class="skill-per html" style="width:{{ "{:.3f}".format(row.probability) }}%">
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                {% endfor %}
-              </tbody>
-            </table>
+            <p>
+              Cher patient, <br><br/>
+
+              Nous souhaitons vous informer des résultats de votre récente évaluation médicale. Après une analyse approfondie de vos symptômes, de vos examens et de votre historique médical, notre équipe médicale a établi un diagnostic concernant votre condition de santé.
+
+              Nous avons identifié que vous souffrez de <b> {{ rows[0].disease }} </b>.Notre équipe médicale est disponible pour répondre à toutes vos questions, vous fournir des informations supplémentaires sur la maladie, et vous proposer un plan de traitement personnalisé pour gérer et traiter votre condition.
+
+              <br><br/>Nous tenons à souligner qu'il est important de suivre les recommandations médicales, de prendre les médicaments prescrits et de respecter les rendez-vous de suivi. En travaillant ensemble, nous pouvons améliorer votre qualité de vie et favoriser votre rétablissement.
+
+              <br><br/>N'hésitez pas à nous contacter si vous avez des préoccupations supplémentaires ou si vous avez besoin de plus d'informations. Votre bien-être est notre priorité, et nous sommes là pour vous accompagner à chaque étape de votre parcours de guérison.
+
+              <br><br/>
+              Cordialement,
+              <br><br/>
+              L'équipe médicale
+            </p>
           </body>
         </html>
     ''', rows=rows)
-    # ','mohamed.mezzi@ensi-uma.tn','raslen.ouarghi@ensi-uma.tn'
-    message = Message("DISEASE PREDICTION RESULT", sender='doctsmarttn@gmail.com', recipients=['hale.dhouadi@ensi-uma.tn'])
+    message = Message("DISEASE PREDICTION RESULT", sender='doctsmarttn@gmail.com', recipients=['raslen.ouarghi@ensi-uma.tn','mohamed.mezzi@ensi-uma.tn'])
     message.html = body
     mail.send(message)
-    return 'Email sent!'
+    return redirect(request.referrer)
 
 
 if __name__=="__main__":

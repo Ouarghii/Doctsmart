@@ -4,6 +4,7 @@ import AppointmentForm from "../doctor/AppointmentForm";
 import pat from '../../assets/patt.mp4'
 import Layout1 from "./Layout1";
 import axios from "axios";
+import './Patient2.css'
 import { Modal, Button } from 'react-bootstrap';
 
 const PAGE_SIZE = 5;
@@ -42,15 +43,19 @@ const ListPatients1 = () => {
       console.error("Invalid ID");
       return;
     }
-    
-    axios.delete(`/allpatients/${id}`).then((response)=>{
-      setPatients((prevPatients)=>
-        prevPatients.filter((patient)=>patient._id!==id)
-      )
-    }).catch((error) => {
-      console.error(error);
-    });
+  
+    axios.delete(`/allpatients/${id}`)
+      .then((res) => {
+        setPatients((prevPatients) =>
+          prevPatients.filter((patient) => patient._id !== id)
+        );
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
+  
+  
 
   const handleFormClose = () => {
     setShowAppointmentModal(false);
@@ -64,11 +69,12 @@ const ListPatients1 = () => {
   const displayedPatients = patients.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
 
   return (
+    <div className="patient-cover">
     <Layout1>
-      <video src={pat} autoPlay loop muted />
+      
       <div>
-        <h1>List of Patients</h1>
-        <table>
+          <h1>List of Patients</h1>
+          <table className="containerpati">
           <thead>
             <tr>
               <th>First Name</th>
@@ -88,17 +94,21 @@ const ListPatients1 = () => {
                 <td>{patient.phone}</td>
                 <td>{patient.blood}</td>
                 <td>
-                  <button onClick={() => handleSelectPatient(patient)}>
+                  <button onClick={() => handleSelectPatient(patient)} style={{ marginRight: "10px" }}>
                     Create Appointment
                   </button>
-                  <button onClick={() => handleDeletePatient(patient._id)}>
-                    Delete Patient
-                  </button>
+                  <button onClick={() => handleDeletePatient(patient._id)}>Delete</button>
+
                 </td>
               </tr>
             ))}
           </tbody>
-        </table>
+          </table>
+
+
+
+
+
         <div>
           {Array.from(Array(pageCount).keys()).map((pageIndex) => (
             <button key={pageIndex} onClick={() => handlePageChange(pageIndex)}>{pageIndex + 1}</button>
@@ -125,6 +135,7 @@ Close
 </Modal>
 </div>
 </Layout1>
+</div>
 );
 };
 

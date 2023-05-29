@@ -47,7 +47,7 @@ export default function Reviewexp() {
                         </p>
                         <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
-                            <span className='name'> Brahim 3aftoula </span>
+                            <span className='name'> Foulen Ben Foulen </span>
                             <span className='Age'> 67 Y.o</span>
                         </div>
                 </SwiperSlide>
@@ -56,12 +56,10 @@ export default function Reviewexp() {
                         <p> The team of professional caretakers have helped us to improve many aspects
                              of our life, social life included.
                               The personal assistant works hard and knows what they are doing.
-                              <br></br>
-                               Thank you.
                         </p>
                         <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
-                            <span className='name'> Raslen PCD </span>
+                            <span className='name'> Foulen Ben Foulen </span>
                             <span className='Age'> 69 Y.o</span>
                         </div>
                 </SwiperSlide>
@@ -74,7 +72,7 @@ export default function Reviewexp() {
                         </p>
                         <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
-                            <span className='name'> Mezzi kafka </span>
+                            <span className='name'> Foulen Ben Foulen </span>
                             <span className='Age'> 102 Y.o</span>
                         </div>
                 </SwiperSlide>
@@ -87,7 +85,7 @@ export default function Reviewexp() {
                         </p>
                         <FaQuoteLeft  className='quotesicon'/>
                         <div className='details'>
-                            <span className='name'> Mezzi tawnji </span>
+                            <span className='name'> Foulen Ben Foulen </span>
                             <span className='Age'> 22 Y.o</span>
                         </div>
                 </SwiperSlide>

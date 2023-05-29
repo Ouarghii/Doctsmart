@@ -4,7 +4,6 @@ import fedi from '../assets/fedi.png';
 import mezzi from '../assets/mezzi.png';
 import raslen from '../assets/raslen.png';
 
-
 function Habata() {
   return (
         <div name="team">

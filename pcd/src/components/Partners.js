@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import './Partners.css'
-import logo from '../assets/logo.png'
-import logo1 from '../assets/logo1.png'
-import logo2 from '../assets/logo2.jpg'
-import logo3 from '../assets/logo1.png'
-import logo4 from '../assets/logo4.png'
-import logo5 from '../assets/logo5.png'
-import logo6 from '../assets/logo6.png'
-import logo7 from '../assets/logo7.png'
-import logo8 from '../assets/docsmartlogo.png'
+import logo from '../assets/PARTNERS/logo.png'
+import logo1 from '../assets/PARTNERS/logo1.png'
+import logo2 from '../assets/PARTNERS/logo2.png'
+import logo3 from '../assets/PARTNERS/logo1.png'
+import logo4 from '../assets/PARTNERS/logo4.png'
+import logo5 from '../assets/PARTNERS/logo5.png'
+import logo6 from '../assets/PARTNERS/logo6.png'
+import logo7 from '../assets/PARTNERS/logo7.png'
+import logo8 from '../assets/PARTNERS/logo8.png'
 
 const Partner = () => {
   const partners = [

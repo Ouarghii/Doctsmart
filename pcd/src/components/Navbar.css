@@ -45,9 +45,8 @@
     padding: 7px 14px;
     border-radius: 3px;
   }
-  
-  a.active, a:hover {
-    background: #1e212a;
+  nav ul li a:hover {
+    background: #1f212a;
     color: white;
   }
   

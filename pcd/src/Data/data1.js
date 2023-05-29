@@ -8,11 +8,11 @@ export const Sidebar=[
         path:'/dash/doctors',
         icon:'fa-solid fa-user-doctor'
     },{
-        name:'patients',
+        name:'Patients',
         path:'/dash/patients',
         icon:'fa-solid fa-user'
     },{
-        name:'add_patients',
+        name:'Add patients',
         path:'/dash/registerp',
         icon:'fa-solid fa-user'
     }
@@ -24,7 +24,7 @@ export const Sidebar=[
             // delete the token cookie
             document.cookie = 'token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             // redirect to /recepauth
-            window.location.href = '/recepauth';
+            window.location.href = '/logincard';
           }
     }
 ]

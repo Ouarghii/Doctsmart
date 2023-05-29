@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction</title>
     <link rel="stylesheet" href="/static/style.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
   </head>
   <body>
     <h1>DISEASES</h1>
@@ -41,11 +41,41 @@
     <br/>
     <br/>
     <!-- <button class="predictbtn" > -->
-      <a href="/sendemail">Send Mail!</a>  
+      <a href="/sendemail" onclick="showAlert()" >Send Mail!</a>  
       <!-- <svg class="border-container">
         <rect pathLength="100" class="border-line"></rect>
       </svg>
     </button> -->
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script>
+      function showAlert() {
+        Swal.fire({
+          title: 'Mail Sent!',
+          text: 'mail sent successufully!',
+          icon: 'success',
+          confirmButtonText: 'ok'
+        });
+      }
+      
+      $(document).ready(function() {
+        $('#sendEmailButton').click(function() {
+            $.ajax({
+                type: 'POST',
+                url: '/send_email',
+                success: function(response) {
+                    // Handle the response from the server
+                    if (response.status === 'success') {
+                        alert('Email sent successfully');
+                    } else {
+                        alert('Email failed to send');
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+    </script>
   </body>
 </html>

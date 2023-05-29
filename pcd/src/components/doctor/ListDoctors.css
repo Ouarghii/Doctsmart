@@ -1,39 +1,66 @@
-.doctors-container {
+ .divregdoctor {
+  background: url('../../assets/bgdoctorreg.jpg');
+  background-size: cover;
+ }
+ 
+ 
+ .doctors-container {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  table {
+  .listdoct {
+    width: 1000px;
     border-collapse: collapse;
-    width: 100%;
-    margin: 2rem 0;
-    max-width: 800px;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(39, 1, 255, 0.1);
+    color: black;
+    text-align: center;
   }
-  
-  th,
-  td {
-    text-align: left;
-    padding: 0.5rem;
-  }
-  
-  thead {
-    background-color: #1a1a1a;
+  .listdoct th{
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.687);
     color: #fff;
+    text-align: center;
+  }
+  .listdoct  td {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.741);
+    color: #000000;
+    text-align: center;
+    height: 60px;
+  }
+  .listdoct   thead th {
+    background-color: #1f212a;
   }
   
-  tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    
+  .listdoct tbody td:hover{
+    background-color: rgba(46, 163, 221);
+    }
+    .listdoct tbody tr:hover{
+      background-color: rgba(46, 163, 221, 0.444);
+      }
+  .listdoct tbody td {
+    position: relative;
   }
+
   
-  tbody tr:hover {
-    background-color: #ddd;
+  /*
+
+  
+
+  
+  .tbody .td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(46, 163, 221, 0.879);
+    z-index: -1;
   }
-  
-  p {
-    margin: 2rem 0;
-  }
-  
+   */

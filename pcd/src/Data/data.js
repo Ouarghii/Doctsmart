@@ -10,15 +10,11 @@ export const SidebarMenu=[
         path:'/doctorapp/appointments',
         icon:'fa-solid fa-list'
     },{
-        name:'patients',
+        name:'Patients',
         path:'/doctorapp/patients',
         icon:'fa-solid fa-user'
     },{
-        name:'review',
-        path:'/doctorapp/review',
-        icon:'fa-solid fa-comment'
-    },{
-        name:'statistics',
+        name:'Statistics',
         path:'/doctorapp/statistics',
         icon:'fa fa-bar-chart'
     }
@@ -30,7 +26,7 @@ export const SidebarMenu=[
             // delete the token cookie
             document.cookie = 'token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             // redirect to /doctorauth
-            window.location.href = '/doctorauth';
+            window.location.href = '/logincard';
           }
     }
 ]

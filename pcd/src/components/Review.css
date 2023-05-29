@@ -103,7 +103,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    bottom: 4%;
+    bottom: 8%;
 }
 .details .name {
     font-size: 20px;

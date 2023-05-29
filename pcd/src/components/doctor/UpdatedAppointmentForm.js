@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
-const UpdateAppointmentForm = ({ appointment, onUpdate }) => {
+const UpdateAppointmentForm = ({ appointment, handleSubmit }) => {
   // State for form data
   const [name, setName] = useState(appointment.name);
   const [email, setEmail] = useState(appointment.email);
@@ -10,26 +12,26 @@ const UpdateAppointmentForm = ({ appointment, onUpdate }) => {
   const [time, setTime] = useState(appointment.time);
   const [note, setNote] = useState(appointment.note);
 
-  const handleSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-
-    // Send PUT request to update appointment
-    axios
-      .put(`/appointments/${appointment._id}`, {
-        name,
-        email,
-        phone,
-        date,
-        time,
-        note,
-      })
-      .then((response) => {
-        onUpdate(response.data);
-      });
+  
+    // Format date and time values before submitting the form
+    const formattedDate = new Date(date).toISOString().slice(0, 10);
+    const formattedTime = new Date(`1970-01-01T${time}`).toISOString().slice(11, 16);
+  
+    // Call the parent handleSubmit function to update the appointment
+    handleSubmit({
+      name,
+      email,
+      phone,
+      date: formattedDate,
+      time: formattedTime,
+      note,
+    });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={onSubmit}>
       <div>
         <label htmlFor="name">Name:</label>
         <input
@@ -88,9 +90,8 @@ const UpdateAppointmentForm = ({ appointment, onUpdate }) => {
           onChange={(event) => setNote(event.target.value)}
         />
       </div>
-      <button type="submit">Update</button>
+      <Button variant="primary" type="submit">Update</Button>
     </form>
   );
 };
-
 export default UpdateAppointmentForm

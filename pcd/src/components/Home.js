@@ -19,6 +19,7 @@ import Logincard from './logincard';
 import ServicePage from './Services';
 import Habata from './habata';
 import PredDis from './Symptom';
+import Service from './home/Service';
 
 const Home = () => {
   useEffect(() => {
@@ -40,7 +41,8 @@ const Home = () => {
     <div>
       <Navbar className="transparent-nav" />
       <FirstHome id='Home' />
-      <ServicePage id='Services'/>
+      {/* <ServicePage id='Services'/> */}
+      <Service id='Services'/>
       <NumberStats id='stats'/>   
       <Blogs id='blogs'/>  
       <Reviewexp id="review"/>

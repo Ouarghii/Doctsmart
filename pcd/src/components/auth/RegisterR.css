@@ -1,0 +1,333 @@
+section{
+    width: 100%;
+    
+    min-height:calc(100vh - 80px);
+  }
+  .recepform_data{
+    background: rgba(72, 72, 72, 0.5);
+  }
+  section .recepform_data{
+    max-width: 750px;
+    position: relative;
+    height: 120vh;
+    top: -40px;
+    left: 27%;
+    margin: 25px auto;
+    padding: 35px 10px;
+    box-shadow: 0 0 15px -10px #2d3748;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    
+    
+  }
+  
+  .form_heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_heading h2{
+    font-size: 30px;
+  }
+  .recepform_data h1{
+    font-size: 34px;
+    color: #2a1f1f;
+    font-size: 50px;
+    font-weight: 500;
+  }
+  
+  .recepform_data p{
+    color: #ffffff;
+    font-size: 25px;
+    margin-top:9px;
+  }
+  
+  .recepform_data form{
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px 50px;
+    height: max-content;
+  }
+  
+  .recepform_data form .form_input input{
+    width: 580px;
+    padding: 15px;
+    border: 1px solid #d4d0d0;
+    border-radius: 5px;
+    outline: none;
+    
+    margin-top: 6px;
+    font-size: 20px;
+    
+  }
+  
+  .recepform_data form .form_input label{
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .form_input .two{
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .recepform_data form .form_input input:focus{
+    border:2px solid rgba(66, 153, 225,0.6);
+   
+  }
+  
+  
+  .recepform_data form .form_input input::placeholder{
+    color: #8694a8;
+    letter-spacing: .5px;
+    font-size: 14px;
+  }
+  
+  .form_input .showpass{
+    position: absolute;
+    right: 0;
+    top:1px;
+    padding: 7px 10px;
+    margin-right: 5px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 1500;
+    color: #2a4365;
+    background-color: #EDF2F7;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form .btn{
+    display:block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color:#1a365d;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .3s;
+  }
+  
+  
+  form .btn:hover{
+    background-color: #97a1b1;
+    transform: scale(105%);
+  }
+  
+  .recepform_data form p{
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .recepform_data form a{
+    text-decoration: none;
+    color:#718096 ;
+    border-bottom: 2px solid #8694a8;
+  }
+  .background-video1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    
+    background-image: url('../../assets/back.png');
+    background-size: cover;
+    
+  }
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .login-box2 {
+    position: relative;
+    padding-top: 35px;
+    left: 25%;
+    max-width: 650px;
+    top: 590px;
+    height: 120vh;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+  
+  .login-box2 h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .login-box2 .user-box {
+    position: relative;
+  }
+  
+  .login-box2 .user-box input {
+    margin-top: 55px;
+    width: 80%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    margin-left: 20px;
+  }
+  .login-box2 .user-box label {
+    margin-top: 55px;
+    margin-left: 20px;
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 35px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box2 .user-box input:focus ~ label,
+  .login-box2 .user-box input:valid ~ label {
+    top: -35px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 20px;
+    
+  }
+  
+  .login-box2 form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    left: 25px;
+  }
+  
+  .login-box2 a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .login-box2 a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box2 a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box2 a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box2 a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box2 a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  .signupbtn{
+    position: absolute;
+    top: 120px;
+    left: 100px;
+  }
+  .doctsmartlogo2{
+    position: absolute;
+    left: 890px;
+    top: 330px;
+  }

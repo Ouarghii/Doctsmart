@@ -26,8 +26,8 @@ const ListDoctors = () => {
   }, []);
 
   return (
+    <div className='divregdoctor'>
     <Layout1>
-      <video src={bkd} autoPlay loop muted />
       <div className="doctors-container">
         <h1>List of Registered Doctors:</h1>
         
@@ -36,8 +36,9 @@ const ListDoctors = () => {
         ) : error ? (
           <p>Error: {error.message}</p>
         ) : doctors.length > 0 ? (
-          <table>
-            <thead>
+
+          <table style={{marginTop:'100px'}} className='listdoct'>
+          	 <thead>
               <tr>
                 <th>Username</th>
                 <th>Email</th>
@@ -53,12 +54,14 @@ const ListDoctors = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+          	</table>
+
         ) : (
           <p>No doctors found.</p>
         )}
       </div>
     </Layout1>
+  </div>
   );
 };
 

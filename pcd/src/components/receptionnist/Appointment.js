@@ -81,7 +81,7 @@ const AppointmentDetails = () => {
                 <td className="cell">{appointment.name}</td>
                 <td className="cell">{appointment.email}</td>
                 <td className="cell">{appointment.phone}</td>
-                <td className="cell">{appointment.date}</td>
+                <td className="cell">{new Date(appointment.date).toLocaleDateString()}</td>
                 <td className="cell">{appointment.time}</td>
                 <td className="cell">{appointment.note}</td>
                 <td className="cell">

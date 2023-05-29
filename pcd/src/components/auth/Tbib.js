@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './tbib.css';
-import log from '../../assets/log.svg'
-import reg from '../../assets/register.svg'
+import log from '../../assets/log1.png'
+
+import reg from '../../assets/reg.png'
 import { message, Form, Input, Button } from 'antd'
 import { useHistory } from 'react-router-dom';
 import  {useDispatch} from'react-redux'
@@ -99,25 +100,29 @@ function Tbib() {
       <div className="content">
         <h3>New here ?</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at leo ac nisi accumsan pulvinar.
-        </p>
+        "Medicine is not only a science; it is also an art. It does not consist of compounding pills and plasters; it deals with the very processes of life, which must be understood before they may be guided." - Paracelsus        </p>
         <button className="btinn transparent" onClick={handleSignUpClick}>
           Sign up
         </button>
       </div>
-      <img src={reg} className="image" alt="Register" />
+      <a href='/logincard'><img src={reg} className="imagereg"  alt="Register" /></a>
+      
     </div>
     <div className="panel right-panel">
       <div className="content">
         <h3>One of us ?</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at leo ac nisi accumsan pulvinar.
+          
+"Health is a state of complete physical, mental, and social well-being, not merely the absence of disease or infirmity." - World Health Organization
         </p>
         <button className="btinn transparent" onClick={handleSignInClick}>
           Sign in
         </button>
       </div>
-      <img src={log} className="image" alt="Login" />
+      <a href='/logincard'>
+      <img src={log} className="imagetbib" alt="Login" />
+      </a>
+      
     </div>
   </div>
 </div>

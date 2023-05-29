@@ -46,8 +46,9 @@ const AppointmentForm = () => {
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            style={{borderColor:'black'}}
             required
-            style={{border:'black'}}
+            
           />
         </div>
         <div className="form-field">
@@ -59,7 +60,7 @@ const AppointmentForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            style={{border:'black'}}
+            style={{borderColor:'black'}}
           />
         </div>
         <div className="form-field">
@@ -71,7 +72,7 @@ const AppointmentForm = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
-            style={{border:'black'}}
+            style={{borderColor:'black'}}
           />
         </div>
         <div className="form-field">
@@ -83,7 +84,7 @@ const AppointmentForm = () => {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             required
-            style={{border:'black'}}
+            style={{borderColor:'black'}}
           />
         </div>
         <div className="form-field">
@@ -94,6 +95,7 @@ const AppointmentForm = () => {
             name="time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
+            style={{borderColor:'black',marginTop:'15px'}}
             required
           />
         </div>
@@ -104,6 +106,7 @@ const AppointmentForm = () => {
             name="note"
             value={note}
             onChange={(e) => setNote(e.target.value)}
+            style={{borderColor:'black',marginTop:'15px'}}
           />
         </div>
         <div className="form-actions">
