@@ -1,9 +1,8 @@
-# Bienvenue sur DocSmart Intelligent
+# Bienvenue sur DoctSmart Intelligent
 
-![DocSmart Logo](![logodoc](https://github.com/Ouarghii/Doctsmart/assets/104208328/d2e8046d-0043-4832-ac3c-5a84847ddb66)
-)
+![DoctSmart Logo](doctsmart_logo.png)
 
-DocSmart Intelligent est une application web innovante qui simplifie la gestion des rendez-vous médicaux, les diagnostics et les prédictions de maladies grâce à des modèles de machine learning de pointe. Cette application a été développée en utilisant les technologies les plus modernes pour garantir une expérience utilisateur fluide et efficace.
+DoctSmart Intelligent est une application web innovante qui simplifie la gestion des rendez-vous médicaux, les diagnostics et les prédictions de maladies grâce à des modèles de machine learning de pointe. Cette application a été développée en utilisant les technologies les plus modernes pour garantir une expérience utilisateur fluide et efficace.
 
 ## Fonctionnalités clés
 
@@ -42,4 +41,5 @@ DocSmart Intelligent est une application web innovante qui simplifie la gestion 
 4. Démarrez le serveur en utilisant `npm start` pour le frontend et `node server.js` pour le backend.
 5. Accédez à l'application dans votre navigateur à l'adresse `http://localhost:3000`.
 
-N'hésitez pas à explorer et à utiliser DocSmart Intelligent pour simplifier la gestion de vos rendez-vous médicaux et améliorer vos diagnostics grâce à la puissance de l'intelligence artificielle.
+N'hésitez pas à explorer et à utiliser DoctSmart Intelligent pour simplifier la gestion de vos rendez-vous médicaux et améliorer vos diagnostics grâce à la puissance de l'intelligence artificielle.
+
